@@ -35,8 +35,8 @@ public class Indicador {
 
             DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
 
-            DatabaseReference pindicadorRef = firebaseRef.child("Indicadores").child(coment.getIdComentario()).child("qtdindicadores");
-            setQtdIndicação ( getQtdIndicação()+ valor );
+            DatabaseReference pindicadorRef = firebaseRef.child("Indicadores").child(coment.getIdComentario()).child("qtdindicacao");
+            setQtdIndicação ( getQtdIndicação()+ valor);
             pindicadorRef.setValue(getQtdIndicação());
             }
 

@@ -152,7 +152,9 @@ public class PerfilFragment extends Fragment {
         imagePerfil = view.findViewById(R.id.imagePerfil);
         textPublicacoes = view.findViewById(R.id.textPublicacoes);
         textSeguidores = view.findViewById(R.id.textSeguidores);
+        textSeguidores.setVisibility(View.GONE);
         textSeguindo = view.findViewById(R.id.textSeguindo);
+        textSeguindo.setVisibility(View.GONE);
         buttonAcaoPerfil = view.findViewById(R.id.buttonAcaoPerfil);
     }
 

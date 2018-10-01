@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.rightside.tevinaredentor.R;
+import com.rightside.tevinaredentor.model.Conversasalva;
+import com.rightside.tevinaredentor.model.Mensagem;
 import com.rightside.tevinaredentor.model.Usuario;
 
 import org.w3c.dom.Text;
@@ -22,7 +24,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ConversaAdapter extends RecyclerView.Adapter<ConversaAdapter.MyViewHolder> {
 
     private List<Usuario> contatos; //passando lista de contatos
-    private Context context;
+
+  private Context context;
+
 
     public ConversaAdapter(List<Usuario> listaContatos, Context c) {
         this.contatos = listaContatos;
@@ -40,7 +44,9 @@ public class ConversaAdapter extends RecyclerView.Adapter<ConversaAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Usuario usuario = contatos.get(position);
 
+
         holder.nome.setText(usuario.getNome()); //recuperando o nome do usuario e setando
+
 
         if ( usuario.getCaminhoFoto() != null) { //SE O USUARIO.CAMINHOFOTO FOR DIFERENTE DE NULO TEMOS UMA FOTO
             Uri uri = Uri.parse(usuario.getCaminhoFoto()); //CONVERTENDO DE STRING PARA URI PARA PASSAR NO PARAMETRO
@@ -57,12 +63,16 @@ public class ConversaAdapter extends RecyclerView.Adapter<ConversaAdapter.MyView
     @Override
     public int getItemCount() {
         return contatos.size() ; //RETORNANDO O TAMANHO DA LISTA DE USUARIOS
+
+
+
+
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView foto;
-        TextView nome;
+        TextView nome, ultimamensagem;
 
 
         public MyViewHolder(View itemView) {
@@ -70,6 +80,7 @@ public class ConversaAdapter extends RecyclerView.Adapter<ConversaAdapter.MyView
 
             foto = itemView.findViewById(R.id.imageViewFotoContato); //ids do xml
             nome = itemView.findViewById(R.id.textNomeContato); //paassando ids do xml
+
 
         }
     }

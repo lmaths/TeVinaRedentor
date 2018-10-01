@@ -1,6 +1,6 @@
 package com.rightside.tevinaredentor.model;
 
-public class Mensagem {
+public class Mensagem extends Conversasalva {
 
     private String idUsuario;
     private String mensagem;

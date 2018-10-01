@@ -40,7 +40,7 @@ public class PerfilAmigoActivity extends AppCompatActivity {
     private Usuario usuarioLogado;
     private Button buttonAcaoPerfil;
     private CircleImageView imagePerfil;
-    private TextView textPublicacoes, textSeguidores, textSeguindo;
+    private TextView textPublicacoes, textSeguidores, textSeguindo, textView;
     private GridView gridViewPerfil;
     private AdapterGrid adapterGrid;
 
@@ -160,7 +160,7 @@ public class PerfilAmigoActivity extends AppCompatActivity {
                     Postagem postagem = ds.getValue( Postagem.class );
                     postagens.add( postagem );
                     urlFotos.add( postagem.getCaminhoFoto() );
-                    //Log.i("postagem", "url:" + postagem.getCaminhoFoto() );
+                    Log.i("postagem", "url:" + postagem.getCaminhoFoto() );
                 }
 
                 //Configurar adapter
@@ -348,10 +348,17 @@ public class PerfilAmigoActivity extends AppCompatActivity {
     private void inicializarComponentes(){
         imagePerfil = findViewById(R.id.imagePerfil);
         gridViewPerfil = findViewById(R.id.gridViewPerfil);
+        gridViewPerfil.setVisibility(View.GONE);
         buttonAcaoPerfil = findViewById(R.id.buttonAcaoPerfil);
+        buttonAcaoPerfil.setVisibility(View.GONE);
         textPublicacoes = findViewById(R.id.textPublicacoes);
+        textPublicacoes.setVisibility(View.GONE);
         textSeguidores = findViewById(R.id.textSeguidores);
+        textSeguidores.setVisibility(View.GONE);
         textSeguindo = findViewById(R.id.textSeguindo);
+        textSeguindo.setVisibility(View.GONE);
+        textView = findViewById(R.id.textView);
+        textView.setVisibility(View.GONE);
         buttonAcaoPerfil.setText("Carregando");
     }
 

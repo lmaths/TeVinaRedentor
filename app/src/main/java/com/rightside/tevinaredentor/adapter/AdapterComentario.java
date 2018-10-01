@@ -68,15 +68,15 @@ public class AdapterComentario extends RecyclerView.Adapter<AdapterComentario.My
         indicadoresRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int qtdindicadores = 0;
-                if (dataSnapshot.hasChild("qtdindicadores")) {
+                int qtdindicadores =0;
+                if (dataSnapshot.hasChild("qtdindicacao")) {
                     Indicador indicador = dataSnapshot.getValue(Indicador.class);
                     qtdindicadores = indicador.getQtdIndicação();
                 }
 
                 if (dataSnapshot.hasChild(usuarioLogado.getId())) {
-                    holder.likeButton2.setLiked(true);}else
-                        {
+                    holder.likeButton2.setLiked(true);}
+                    else {
                     holder.likeButton2.setLiked(false);
                 }
 

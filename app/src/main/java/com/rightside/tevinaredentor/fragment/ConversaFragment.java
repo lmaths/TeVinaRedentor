@@ -40,6 +40,7 @@ public class  ConversaFragment extends Fragment {
     private FirebaseUser usuarioAtual;
 
 
+
     public ConversaFragment() {
         // Required empty public constructor
     }
